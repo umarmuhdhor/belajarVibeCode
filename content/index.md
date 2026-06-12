@@ -1,12 +1,5 @@
 ---
-title: The Best App to Solve Your Problem
+title: PopShot — Your Trip Just Got a Quest Log
+template: home
+description: PopShot turns group travel into a live photo game. Pick challenges, snap moments together, and end every trip with a shared album worth keeping.
 ---
-# Hi to my site
-
-This site is built with [Saga](https://github.com/loopwerk/Saga), a static site generator written in Swift.
-
-
-## Features {#features}
-
-
-## Pricing {#pricing}

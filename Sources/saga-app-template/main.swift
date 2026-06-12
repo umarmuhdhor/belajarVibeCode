@@ -5,14 +5,19 @@ import SagaSwimRenderer
 import SwiftTailwind
 
 enum SiteMetadata {
-  static let url = URL(string: "http://www.example.com")!
-  static let name = "Example App Landing Page"
-  static let author = "Brent Deverman"
+  static let url = URL(string: "https://popshot.app")!
+  static let name = "PopShot"
+  static let author = "PopShot"
 }
 
 struct ArticleMetadata: Metadata {
   let tags: [String]
   var summary: String?
+}
+
+struct PageMetadata: Metadata {
+  var template: String?
+  var description: String?
 }
 
 let tailwind = SwiftTailwind(version: "4.2.1")
@@ -50,9 +55,9 @@ try await Saga(input: "content", output: "docs")
     folder: "articles",
     metadata: ArticleMetadata.self,
     readers: [.parsleyMarkdownReader(
-        markdownOptions: [.hardBreaks, .smartQuotes, .markdownAttributes],
-        syntaxExtensions: [.autolink, .strikethrough, .table, .tasklist]
-)],
+      markdownOptions: [.hardBreaks, .smartQuotes, .markdownAttributes],
+      syntaxExtensions: [.autolink, .strikethrough, .table, .tasklist]
+    )],
     writers: [
       .itemWriter(swim(renderArticle)),
       .listWriter(swim(renderArticles)),
@@ -60,11 +65,11 @@ try await Saga(input: "content", output: "docs")
     ]
   )
   .register(
-    metadata: EmptyMetadata.self,
+    metadata: PageMetadata.self,
     readers: [.parsleyMarkdownReader(
-    markdownOptions: [.hardBreaks, .smartQuotes, .markdownAttributes],
-        syntaxExtensions: [.autolink, .strikethrough, .table, .tasklist]
-        )],
+      markdownOptions: [.hardBreaks, .smartQuotes, .markdownAttributes],
+      syntaxExtensions: [.autolink, .strikethrough, .table, .tasklist]
+    )],
     writers: [.itemWriter(swim(renderPage))]
   )
   .run()
