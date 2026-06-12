@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply mx-auto max-w-4xl bg-panel px-5 font-sans leading-7 text-ink antialiased;
+    @apply mx-auto max-w-4xl bg-surface px-5 font-sans leading-7 text-ink antialiased;
   }
 
   main {

@@ -15,6 +15,8 @@ func baseHtml(
       meta(content: "width=device-width, initial-scale=1", name: "viewport")
       title { pageTitle }
       link(href: Saga.hashed("/static/style.css"), rel: "stylesheet")
+      link(href: "/static/assets/app-icon.png", rel: "icon", type: "image/png")
+      link(href: "/static/assets/app-icon.png", rel: "apple-touch-icon")
       if let desc = description {
         meta(content: desc, name: "description")
         meta(content: "summary_large_image", name: "twitter:card")
