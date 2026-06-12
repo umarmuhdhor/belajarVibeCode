@@ -1,0 +1,54 @@
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply mx-auto max-w-4xl bg-panel px-5 font-sans leading-7 text-ink antialiased;
+  }
+
+  main {
+    @apply min-h-[60vh];
+  }
+
+  h1 {
+    @apply mb-5 text-3xl font-bold tracking-normal text-ink md:text-4xl;
+  }
+
+  h2 {
+    @apply mb-3 mt-8 text-2xl font-semibold tracking-normal text-ink;
+  }
+
+  p {
+    @apply mb-4 text-muted;
+  }
+
+  a {
+    @apply text-accent underline-offset-4 transition-colors hover:text-accent-dark hover:underline;
+  }
+
+  ol,
+  ul {
+    @apply mb-4 pl-6;
+  }
+
+  li {
+    @apply mb-1;
+  }
+
+  code {
+    @apply rounded bg-line/60 px-1.5 py-0.5 text-[0.9em] text-ink;
+  }
+
+  pre {
+    @apply mb-4 overflow-x-auto rounded-lg bg-ink p-4 text-surface;
+  }
+
+  pre code {
+    @apply bg-transparent p-0 text-inherit;
+  }
+}
